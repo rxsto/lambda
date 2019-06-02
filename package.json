@@ -1,0 +1,36 @@
+{
+  "name": "lambda",
+  "version": "0.1.0",
+  "description": "My personal Discord bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "lint": "eslint . --fix --ext .js --ignore-path .gitignore"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rxsto/lambda.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "lambda"
+  ],
+  "author": "Rxsto <oz@farfrom.social> (https://rxsto.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rxsto/lambda/issues"
+  },
+  "homepage": "https://github.com/Rxsto/lambda#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0"
+  },
+  "dependencies": {
+    "@discordjs/uws": "^11.149.1",
+    "bufferutil": "^4.0.1",
+    "discord.js": "github:discordjs/discord.js",
+    "dotenv": "^8.0.0",
+    "erlpack": "github:discordapp/erlpack",
+    "libsodium-wrappers": "^0.7.4"
+  }
+}
