@@ -1,7 +1,15 @@
 require('dotenv').config();
 
-const Lambda = require('./src/Lambda');
+const Manager = require('./src/Manager');
+const ShardingManager = new Manager();
+ShardingManager.initialize();
 
-const Client = new Lambda();
+// const { ShardingManager } = require('discord.js');
+// const manager = new ShardingManager('./src/Lambda.js', { token: process.env.DISCORD_TOKEN_DEBUG });
 
-Client.login((process.env.DEBUG ? process.env.DISCORD_TOKEN_DEBUG : process.env.DISCORD_TOKEN));
+// manager.spawn();
+// manager.on('launch', shard => console.log(`Launched shard ${shard.id}`)); /* eslint-disable-line */
+
+// const BaseClient = require('./src/Lambda');
+// const Client = new BaseClient();
+// Client.initialize();
