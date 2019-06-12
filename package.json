@@ -26,7 +26,6 @@
     "eslint": "^5.16.0"
   },
   "dependencies": {
-    "@discordjs/uws": "^11.149.1",
     "bufferutil": "^4.0.1",
     "discord.js": "github:discordjs/discord.js",
     "dotenv": "^8.0.0",
