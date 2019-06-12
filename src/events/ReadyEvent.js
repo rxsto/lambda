@@ -7,7 +7,7 @@ class ReadyEvent extends Event {
   }
 
   run() {
-    this.client.log.info('Ready');
+    this.client.log.info(`[ReadyEvent] Lambda launched with ${this.client.guilds.size} guilds and ${this.client.users.size} users`);
   }
 }
 
