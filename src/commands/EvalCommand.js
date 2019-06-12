@@ -11,8 +11,8 @@ class EvalCommand extends Command {
     });
   }
 
-  async run(message, content) {
-    message.channel.send(content);
+  run(message, content) {
+    return message.channel.send(content);
   }
 }
 
