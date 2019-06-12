@@ -13,7 +13,7 @@ class PingCommand extends Command {
 
   run(message) {
     const call = Date.now();
-    message.channel.send('Calculating ...').then(message => {
+    return message.channel.send('Calculating ...').then(message => {
       const back = Date.now();
       message.edit(`${back - call}ms`);
     });

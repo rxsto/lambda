@@ -1,4 +1,5 @@
 const CommandStore = require('./CommandStore');
+const GuildEntity = require('../entities/GuildEntity');
 
 class CommandHandler {
 
@@ -8,24 +9,26 @@ class CommandHandler {
   }
 
   handle(message) {
-    this.commandStore.forEach(command => {
-      if (message.author.bot) return;
+    if (message.author.bot) return;
 
-      // TODO: Implement guild-specific prefixes
-      const prefix = process.env.PREFIX;
+    if (!this.client.guildCache.has(message.guild.id)) {
+      this.client.guildCache.set(message.guild.id, new GuildEntity({
+        client: this.client,
+        id: message.guild.id,
+        prefix: this.client.defaultPrefix
+      }));
+    }
 
-      if (!message.content.startsWith(prefix)) return;
+    const prefix = this.client.guildCache.get(message.guild.id).prefix;
 
-      const trigger = message.content.substring(1).split(' ')[0];
-      const content = message.content.substring(1).split(' ').slice(1).join(' ');
+    if (!message.content.startsWith(prefix)) return;
 
-      let executors = command.aliases;
-      executors.push(command.name);
+    const trigger = message.content.substring(prefix.length).split(' ')[0];
+    const content = message.content.substring(prefix.length).split(' ').slice(1).join(' ');
 
-      if (!executors.includes(trigger)) return;
+    if (!this.commandStore.has(trigger)) return;
 
-      this.commandStore.get(trigger).run(message, content);
-    });
+    return this.commandStore.get(trigger).run(message, content);
   }
 }
 

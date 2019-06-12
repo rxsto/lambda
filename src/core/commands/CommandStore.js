@@ -16,6 +16,9 @@ class CommandStore extends Discord.Collection {
       const command = require(directory + file);
       const instance = new command(this.client);
       this.set(instance.name, instance);
+      instance.aliases.forEach(alias => {
+        this.set(alias, instance);
+      });
     });
   }
 }
