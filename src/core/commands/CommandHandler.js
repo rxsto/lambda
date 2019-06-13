@@ -11,15 +11,17 @@ class CommandHandler {
   handle(message) {
     if (message.author.bot) return;
 
-    if (!this.client.guildCache.has(message.guild.id)) {
-      this.client.guildCache.set(message.guild.id, new GuildEntity({
-        client: this.client,
-        id: message.guild.id,
-        prefix: this.client.defaultPrefix
-      }));
-    }
+    // if (!this.client.guildCache.has(message.guild.id)) {
+    //   this.client.guildCache.set(message.guild.id, new GuildEntity({
+    //     client: this.client,
+    //     id: message.guild.id,
+    //     prefix: this.client.defaultPrefix
+    //   }));
+    // }
 
-    const prefix = this.client.guildCache.get(message.guild.id).prefix;
+    // const prefix = this.client.guildCache.get(message.guild.id).prefix;
+
+    const prefix = process.env.PREFIX;
 
     if (!message.content.startsWith(prefix)) return;
 

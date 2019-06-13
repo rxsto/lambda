@@ -97,3 +97,6 @@ typings/
 
 # Environment file
 .env
+
+# Deployment file
+deployment.yml
