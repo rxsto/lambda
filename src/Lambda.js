@@ -18,7 +18,6 @@ class Lambda extends Discord.Client {
     this.commandHandler = new CommandHandler(this);
     this.userCache = new Cache(this);
     this.guildCache = new Cache(this);
-    this.initialize();
   }
 
   async initialize() {
