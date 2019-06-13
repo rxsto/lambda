@@ -15,8 +15,7 @@ class Manager extends Discord.ShardingManager {
 
   initialize() {
     const shard = this.createShard(this.id);
-    shard.spawn().then(response => this.log.info(response)).catch(error => this.log.error(error));
-    this.on('shardCreate', shard => this.log.info(`Shard ${shard.id} launched successfully`));
+    shard.spawn();
   }
 }
 
