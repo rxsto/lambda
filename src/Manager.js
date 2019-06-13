@@ -13,7 +13,7 @@ class Manager extends Discord.ShardingManager {
 
   initialize() {
     const shard = this.createShard(this.id);
-    shard.spawn(60000);
+    shard.spawn(-1);
   }
 }
 
