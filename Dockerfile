@@ -1,6 +1,6 @@
 FROM node:11-alpine
 
-WORKDIR /opt/rxsto/lambda/bot
+WORKDIR /opt/rxsto/lambda
 
 RUN apk update && apk upgrade && apk add --no-cache git
 

@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const Logger = require('./core/util/Logger');
+const Logger = require('logger');
 const Database = require('./core/io/Database');
 const ProbeServer = require('./core/http/ProbeServer');
 const EventHandler = require('./core/events/EventHandler');

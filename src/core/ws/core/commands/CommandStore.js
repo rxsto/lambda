@@ -6,7 +6,7 @@ class CommandStore extends Map {
   constructor(client) {
     super();
     this.client = client;
-    this.storeCommands(path.join(process.cwd(), './src/commands/'));
+    this.storeCommands(path.join(process.cwd(), './src/core/ws/commands/'));
   }
 
   storeCommands(directory) {
@@ -14,9 +14,6 @@ class CommandStore extends Map {
       const command = require(directory + file);
       const instance = new command(this.client);
       this.set(instance.name, instance);
-      instance.aliases.forEach(alias => {
-        this.set(alias, instance);
-      });
     });
   }
 }

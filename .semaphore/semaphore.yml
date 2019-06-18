@@ -16,5 +16,5 @@ blocks:
           commands:
             - checkout
             - docker login -u "${DOCKER_USERNAME}" -p "${DOCKER_PASSWORD}"
-            - docker build -t rxsto/lambda-bot:$SEMAPHORE_GIT_BRANCH-$SEMAPHORE_GIT_SHA .
-            - docker push rxsto/lambda-bot:$SEMAPHORE_GIT_BRANCH-$SEMAPHORE_GIT_SHA
+            - docker build -t rxsto/lambda:$SEMAPHORE_GIT_BRANCH-$SEMAPHORE_GIT_SHA .
+            - docker push rxsto/lambda:$SEMAPHORE_GIT_BRANCH-$SEMAPHORE_GIT_SHA

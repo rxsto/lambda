@@ -1,5 +1,4 @@
 const CommandStore = require('./CommandStore');
-const GuildEntity = require('../entities/GuildEntity');
 
 class CommandHandler {
 
