@@ -18,6 +18,7 @@ class Manager {
   initialize() {
     this.ws.on('open', () => {
       this.log.info(`[Websocket] Connected to Websocket server at ${this.ws.url}`);
+      this.ws.send(this.message.encode(new Message('authorize', { id: this.id, secret: process.env.WS_SECRET }).get()));
       this.ws.send(this.message.encode(new Message('registerpod', this.id).get()));
     });
 
