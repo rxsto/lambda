@@ -36,7 +36,7 @@ class Manager {
   }
 
   launch() {
-    this.manager.spawn();
+    this.manager.spawn(this.manager.totalShards, 7500, Infinity);
     this.manager.shards.forEach(shard => {
       shard.on('ready', () => {
         if (this.manager.readyShards === undefined) {
